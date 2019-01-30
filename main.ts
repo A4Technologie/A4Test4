@@ -39,9 +39,9 @@ namespace A4Test1 {
     /**
  * Functions to operate Grove module.
  */
-//% weight=20 color=#E90028 icon="\uf108" block="A4Test2"
+//% weight=20 color=#00478F icon="\uf108" block="A4Test2"
 namespace A4Test2 {
-    //% blockId="bitbot_motor_forwardV2" block="test 4  $move à la vitesse en pourcentage $speed\\%"
+    //% blockId="bitbot_motor_forwardV2" block="$move à la vitesse en pourcentage $speed\\%"
     //% speed.shadow="speedPicker"
     //% weight=100
      //% subcategory=Moteurs
