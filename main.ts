@@ -45,7 +45,7 @@ namespace A4Test2 {
     //% speed.shadow="speedPicker"
     //% weight=100
      //% subcategory=Moteurs
-    export function drive(move:RobotMoves, speed: number) : void
+    export function drive2(move:RobotMoves, speed: number) : void
     {
     }
 }
