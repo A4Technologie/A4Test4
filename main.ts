@@ -21,7 +21,7 @@ enum RobotMoves
 
 
 /**
- * Functions to operate Grove module.
+ * Functions to operate Grove motors.
  */
 //% weight=10 color=#00478F icon="\uf108" block="A4Test"
 namespace A4Test1 {
@@ -41,11 +41,11 @@ namespace A4Test1 {
  */
 //% weight=10 color=#E90028 icon="\uf108" block="A4Test2"
 namespace A4Test2 {
-    //% blockId="bitbot_motor_forward" block="$move à la vitesse en pourcentage $speed\\%"
+    //% blockId="bitbot_motor_forward" block="test 4  $move à la vitesse en pourcentage $speed\\%"
     //% speed.shadow="speedPicker"
     //% weight=100
      //% subcategory=Moteurs
-    export function drive2(move:RobotMoves, speed: number) : void
+    export function drive2(move: RobotMoves, speed: number) : void
     {
     }
 }
