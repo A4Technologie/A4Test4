@@ -18,6 +18,18 @@ enum RobotMoves
     TurnLeft
  
 }
+// Motor Blocks
+
+    // slow PWM frequency for slower speeds to improve torque
+    function setPWM(): void
+    {
+        if (absSpeed < 20)
+            pins.analogSetPeriod(AnalogPin.P0, 60000);
+        else if (absSpeed < 30)
+            pins.analogSetPeriod(AnalogPin.P0, 40000);
+        else
+            pins.analogSetPeriod(AnalogPin.P0, 30000);
+    }
 
 
     
@@ -58,5 +70,21 @@ namespace A4Test2 {
             pins.analogWritePin(AnalogPin.P15, speedNegative);
             pins.analogWritePin(AnalogPin.P16, speedPositive);  
     }
+ 
+     /**
+      * Drive robot forward (or backward) at speed for milliseconds.
+      */
+    //% blockId="bitbot_motor_forward_milliseconds" block="$move à la vitesse $speed\\% pendant %milliseconds|(ms)"
+    //% speed.shadow="speedPicker"
+    //% weight=95
+    //% subcategory=Moteurs
+    export function driveMilliseconds(move:RobotMoves, speed: number, milliseconds: number): void
+    {
+        drive(move,speed);
+        basic.pause(milliseconds);
+        drive(move,0);
+    }
+ 
+ 
 }
 
