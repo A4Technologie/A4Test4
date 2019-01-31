@@ -23,12 +23,6 @@ enum RobotMoves
     // slow PWM frequency for slower speeds to improve torque
     function setPWM(): void
     {
-        if (absSpeed < 20)
-            pins.analogSetPeriod(AnalogPin.P0, 60000);
-        else if (absSpeed < 30)
-            pins.analogSetPeriod(AnalogPin.P0, 40000);
-        else
-            pins.analogSetPeriod(AnalogPin.P0, 30000);
     }
 
 
@@ -39,11 +33,10 @@ enum RobotMoves
  */
 //% weight=20 color=#00478F icon="A4LogoMin.jpg" block="A4Test2"
 namespace A4Test2 {
-    //% blockId="bitbot_motor_forwardV2" block="$move à la vitesse en pourcentage $speed\\%"
-    //% speed.shadow="speedPicker"
+    //% blockId="bitbot_motor_forwardV2" block="$move à la vitesse en pourcentage "
     //% weight=100
      //% subcategory=Moteurs
-    export function changementVitesse(move: RobotMoves, speed: number) : void
+    export function changementVitesse(move: RobotMoves) : void
     {
 
             pins.analogWritePin(AnalogPin.P15, 0);
