@@ -45,30 +45,9 @@ namespace A4Test2 {
      //% subcategory=Moteurs
     export function changementVitesse(move: RobotMoves, speed: number) : void
     {
-        let forward = (speed >= 0);
-        let absSpeed = Math.abs(speed);
-             if (speed > 100)
-            speed = 100;
-        else if (speed < -100)
-            speed = -100;
-         setPWM();
-       let speedPositive = speed*10*forward;
-       let speedNegative = speed*10*(!forward);
-     
 
-        if ((move == RobotMoves.Forward) || (move == RobotMoves.RotateLeft) || (move == RobotMoves.TurnLeft))
-            pins.analogWritePin(AnalogPin.P13, speedPositive);
-            pins.analogWritePin(AnalogPin.P14, speedNegative);  
-         if ((move == RobotMoves.Backward) || (move == RobotMoves.RotateRight))
-            pins.analogWritePin(AnalogPin.P13, speedNegative);
-            pins.analogWritePin(AnalogPin.P14, speedPositive);  
-
-         if ((move == RobotMoves.Forward) || (move == RobotMoves.RotateRight) || (move == RobotMoves.TurnRight))
-            pins.analogWritePin(AnalogPin.P15, speedPositive);
-            pins.analogWritePin(AnalogPin.P16, speedNegative);  
-         if ((move == RobotMoves.Backward) || (move == RobotMoves.RotateLeft))
-            pins.analogWritePin(AnalogPin.P15, speedNegative);
-            pins.analogWritePin(AnalogPin.P16, speedPositive);  
+            pins.analogWritePin(AnalogPin.P15, 0);
+            pins.analogWritePin(AnalogPin.P16, 1023);  
     }
  
      /**
